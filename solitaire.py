@@ -10,5 +10,12 @@ class Card():
         self.suit = suit
         self.title = "%s%s" % (self.name, self.suit)
         self.value = value
+    
+    def isBelow(self, card):
+        return self.value == (card.value - 1)
 
-
+    def isOppositeSuite(self, card):
+        if self.suit == "club" or self.suit == "spade":
+            return card.suit == "heart" or card.suit == "diam"
+        else: 
+            return card.suit == "spade" or card.suit == "club"
