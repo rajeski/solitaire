@@ -27,3 +27,7 @@ class Card():
             return False
     def __str__(self):
         return self.title
+
+
+class Deck():
+    unshuffled_deck = [Card(card, suit) for card in range(1, 14) for suit in ["club", "diam", "heart", "spade"]]
