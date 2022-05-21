@@ -14,8 +14,16 @@ class Card():
     def isBelow(self, card):
         return self.value == (card.value - 1)
 
-    def isOppositeSuite(self, card):
+    def isOppositeSuit(self, card):
         if self.suit == "club" or self.suit == "spade":
             return card.suit == "heart" or card.suit == "diam"
         else: 
             return card.suit == "spade" or card.suit == "club"
+    
+    def canAttach(self, card):
+        if card.isBelow(self) and card.isOppositeSuit(self):
+            return True
+        else:
+            return False
+    def __str__(self):
+        return self.title
